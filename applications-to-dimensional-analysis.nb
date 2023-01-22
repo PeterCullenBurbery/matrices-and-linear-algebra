@@ -10,16 +10,1996 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[       862,         35]
-NotebookOptionsPosition[       561,         21]
-NotebookOutlinePosition[      1002,         38]
-CellTagsIndexPosition[       959,         35]
+NotebookDataLength[     81703,       2079]
+NotebookOptionsPosition[     77815,       2001]
+NotebookOutlinePosition[     78255,       2018]
+CellTagsIndexPosition[     78212,       2015]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell["matrix", "Subsubsection",
+ CellChangeTimes->{{3.8833464806255245`*^9, 
+  3.883346483248567*^9}},ExpressionUUID->"9107857b-4b11-4531-a183-\
+e9e0e1d1decc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixQ", "[", 
+  RowBox[{"{", "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8833464386975017`*^9, 3.883346443241642*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"e7bcbd24-f9b2-43a7-9093-6a636868ebae"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.883346443674607*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"e186955f-9f10-4f7a-8e1c-265183408b31"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixQ", "[", 
+  RowBox[{"{", 
+   RowBox[{"{", "}"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8833464386975017`*^9, 3.88334645446284*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"70a11f2e-a216-4350-8572-30c023eace4f"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.883346449414953*^9, 3.883346454710041*^9}},
+ CellLabel->"Out[13]=",ExpressionUUID->"22135de8-6acc-441b-acea-cc6594c62de1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixQ", "[", 
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{"{", "}"}], "}"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8833464386975017`*^9, 3.8833464643535385`*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"7b5a7346-d403-4f40-a599-57c59fd7a4ed"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.8833464646609945`*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"a37df388-e1d8-43fb-9b5d-0d8ed6d78b7a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["dimension", "Subsubsection",
+ CellChangeTimes->{{3.883346489469246*^9, 
+  3.8833464903344116`*^9}},ExpressionUUID->"5f612e13-406c-42ce-911c-\
+55fc8cbdbaa2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Names", "[", 
+  RowBox[{"\"\<*Dimension*\>\"", ",", 
+   RowBox[{"IgnoreCase", "->", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.883346494854186*^9, 3.883346502807945*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"87fa00e3-2e2f-4b35-a487-6b0317a75f30"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"AllowedDimensions\"\>", ",", "\<\"BorderDimensions\"\>", 
+   ",", "\<\"BoxDimensions\"\>", ",", "\<\"DimensionalCombinations\"\>", 
+   ",", "\<\"DimensionalMeshComponents\"\>", ",", "\<\"DimensionReduce\"\>", 
+   ",", "\<\"DimensionReducerFunction\"\>", ",", "\<\"DimensionReduction\"\>",
+    ",", "\<\"Dimensions\"\>", ",", "\<\"ImageDimensions\"\>", 
+   ",", "\<\"IndependentUnitDimension\"\>", 
+   ",", "\<\"NondimensionalizationTransform\"\>", 
+   ",", "\<\"QuantityVariableDimensions\"\>", ",", "\<\"RegionDimension\"\>", 
+   ",", "\<\"RegionEmbeddingDimension\"\>", ",", "\<\"StateDimensions\"\>", 
+   ",", "\<\"SystemsModelDimensions\"\>", ",", "\<\"TensorDimensions\"\>", 
+   ",", "\<\"UnitDimensions\"\>", ",", "\<\"UnityDimensions\"\>", 
+   ",", "\<\"ValueDimensions\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.883346503070922*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"ba01641c-80c9-4519-aa68-459c0f57ca6c"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["nondimensionalization", "Subsubsection",
+ CellChangeTimes->{{3.883346687607222*^9, 
+  3.8833466898676653`*^9}},ExpressionUUID->"ab780c49-8f3f-48fe-afc7-\
+12ea85dc003e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Tau]", "=", 
+   RowBox[{"QuantityVariable", "[", 
+    RowBox[{"\"\<t\>\"", ",", "\"\<Time\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"q", "=", 
+   RowBox[{"QuantityVariable", "[", 
+    RowBox[{"\"\<Q\>\"", ",", "\"\<ElectricCharge\>\""}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"v", "=", 
+   RowBox[{"QuantityVariable", "[", 
+    RowBox[{"\"\<V\>\"", ",", "\"\<ElectricPotential\>\""}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"r", "=", 
+   RowBox[{"QuantityVariable", "[", 
+    RowBox[{"\"\<R\>\"", ",", "\"\<ElectricResistance\>\""}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"QuantityVariable", "[", 
+    RowBox[{"\"\<C\>\"", ",", "\"\<ElectricCapacitance\>\""}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"QuantityVariable", "[", 
+    RowBox[{"\"\<L\>\"", ",", "\"\<MagneticInductance\>\""}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.8833467408083014`*^9, 3.8833467408083014`*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"6e105c26-99b0-4aa5-9db7-e13f8d5e3ad7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"odeRC", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"r", " ", 
+     RowBox[{
+      RowBox[{"q", "'"}], "[", "\[Tau]", "]"}]}], "+", 
+    RowBox[{
+     RowBox[{"q", "[", "\[Tau]", "]"}], "/", "c"}]}], "==", 
+   RowBox[{"v", "[", "\[Tau]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8833467448673887`*^9, 3.88334674486839*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"b9677bd7-1813-4e69-8955-9355218d756c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+      "QuantityVariable",
+      DisplayFunction->(TooltipBox[
+        StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+         False], 
+        RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+        "TextStyling"]& )], "[", 
+     TemplateBox[{"\"t\"", "\"Time\""},
+      "QuantityVariable",
+      DisplayFunction->(TooltipBox[
+        StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+         False], 
+        RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+        "TextStyling"]& )], "]"}], 
+    TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+     "QuantityVariable",
+     DisplayFunction->(TooltipBox[
+       StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+        False], 
+       RowBox[{"Quantity variable:", " electric capacitance"}], TooltipStyle -> 
+       "TextStyling"]& )]], "+", 
+   RowBox[{
+    TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+     "QuantityVariable",
+     DisplayFunction->(TooltipBox[
+       StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+        False], 
+       RowBox[{"Quantity variable:", " electric resistance"}], TooltipStyle -> 
+       "TextStyling"]& )], " ", 
+    RowBox[{
+     SuperscriptBox[
+      TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+       "QuantityVariable",
+       DisplayFunction->(TooltipBox[
+         StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+          False], 
+         RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+         "TextStyling"]& )], "\[Prime]",
+      MultilineFunction->None], "[", 
+     TemplateBox[{"\"t\"", "\"Time\""},
+      "QuantityVariable",
+      DisplayFunction->(TooltipBox[
+        StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+         False], 
+        RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+        "TextStyling"]& )], "]"}]}]}], "\[Equal]", 
+  RowBox[{
+   TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " electric potential"}], TooltipStyle -> 
+      "TextStyling"]& )], "[", 
+   TemplateBox[{"\"t\"", "\"Time\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+      "TextStyling"]& )], "]"}]}]], "Output",
+ CellChangeTimes->{3.883346745341106*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"248b5216-4f79-4be0-a4a0-96ce793c65ca"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"odeLRC", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"l", " ", 
+     RowBox[{
+      RowBox[{"q", "''"}], "[", "\[Tau]", "]"}]}], "+", 
+    RowBox[{"r", " ", 
+     RowBox[{
+      RowBox[{"q", "'"}], "[", "\[Tau]", "]"}]}], "+", 
+    RowBox[{
+     RowBox[{"q", "[", "\[Tau]", "]"}], "/", "c"}]}], "==", 
+   RowBox[{"v", "[", "\[Tau]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8833467499553175`*^9, 3.8833467499553175`*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"7af54439-587b-42c2-89dd-a2229a046b66"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+      "QuantityVariable",
+      DisplayFunction->(TooltipBox[
+        StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+         False], 
+        RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+        "TextStyling"]& )], "[", 
+     TemplateBox[{"\"t\"", "\"Time\""},
+      "QuantityVariable",
+      DisplayFunction->(TooltipBox[
+        StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+         False], 
+        RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+        "TextStyling"]& )], "]"}], 
+    TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+     "QuantityVariable",
+     DisplayFunction->(TooltipBox[
+       StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+        False], 
+       RowBox[{"Quantity variable:", " electric capacitance"}], TooltipStyle -> 
+       "TextStyling"]& )]], "+", 
+   RowBox[{
+    TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+     "QuantityVariable",
+     DisplayFunction->(TooltipBox[
+       StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+        False], 
+       RowBox[{"Quantity variable:", " electric resistance"}], TooltipStyle -> 
+       "TextStyling"]& )], " ", 
+    RowBox[{
+     SuperscriptBox[
+      TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+       "QuantityVariable",
+       DisplayFunction->(TooltipBox[
+         StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+          False], 
+         RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+         "TextStyling"]& )], "\[Prime]",
+      MultilineFunction->None], "[", 
+     TemplateBox[{"\"t\"", "\"Time\""},
+      "QuantityVariable",
+      DisplayFunction->(TooltipBox[
+        StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+         False], 
+        RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+        "TextStyling"]& )], "]"}]}], "+", 
+   RowBox[{
+    TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+     "QuantityVariable",
+     DisplayFunction->(TooltipBox[
+       StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+        False], 
+       RowBox[{"Quantity variable:", " magnetic inductance"}], TooltipStyle -> 
+       "TextStyling"]& )], " ", 
+    RowBox[{
+     SuperscriptBox[
+      TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+       "QuantityVariable",
+       DisplayFunction->(TooltipBox[
+         StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+          False], 
+         RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+         "TextStyling"]& )], "\[Prime]\[Prime]",
+      MultilineFunction->None], "[", 
+     TemplateBox[{"\"t\"", "\"Time\""},
+      "QuantityVariable",
+      DisplayFunction->(TooltipBox[
+        StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+         False], 
+        RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+        "TextStyling"]& )], "]"}]}]}], "\[Equal]", 
+  RowBox[{
+   TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " electric potential"}], TooltipStyle -> 
+      "TextStyling"]& )], "[", 
+   TemplateBox[{"\"t\"", "\"Time\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+      "TextStyling"]& )], "]"}]}]], "Output",
+ CellChangeTimes->{3.883346750603751*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"e8694627-bd41-4dd4-88fb-a55cc305f210"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NondimensionalizationTransform", "[", 
+  RowBox[{"odeRC", ",", 
+   RowBox[{"{", 
+    RowBox[{"q", ",", "v", ",", "\[Tau]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "f", ",", "u"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.883346754676424*^9, 3.883346754676424*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"ee5913af-35a5-4e90-80c7-ddcdf3bc736c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"x", "[", "u", "]"}], "+", 
+   RowBox[{
+    SuperscriptBox["x", "\[Prime]",
+     MultilineFunction->None], "[", "u", "]"}]}], "\[Equal]", 
+  RowBox[{"f", "[", "u", "]"}]}]], "Output",
+ CellChangeTimes->{3.88334675524693*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"f1a99e5f-ce18-47d8-8b5b-19745083f0d5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NondimensionalizationTransform", "[", 
+  RowBox[{"odeRC", ",", 
+   RowBox[{"{", 
+    RowBox[{"q", ",", "v", ",", "\[Tau]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "f", ",", "u"}], "}"}], ",", 
+   "\"\<PropertyAssociation\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.883346754676424*^9, 3.8833467653434706`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"f9315a9a-f74e-4478-ae32-3711ec6c94a3"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ReducedForm\"\>", "\[Rule]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "[", "u", "]"}], "+", 
+      RowBox[{
+       SuperscriptBox["x", "\[Prime]",
+        MultilineFunction->None], "[", "u", "]"}]}], "\[Equal]", 
+     RowBox[{"f", "[", "u", "]"}]}]}], ",", 
+   RowBox[{"\<\"NondimensionalizationRules\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SuperscriptBox[
+         TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+            "TextStyling"]& )], "\[Prime]",
+         MultilineFunction->None], "[", 
+        TemplateBox[{"\"t\"", "\"Time\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+           "TextStyling"]& )], "]"}], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"(", 
+          TemplateBox[{
+            RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+           "Quantity"], ")"}], " ", 
+         RowBox[{
+          SuperscriptBox["x", "\[Prime]",
+           MultilineFunction->None], "[", "u", "]"}]}], 
+        RowBox[{
+         TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric capacitance"}], 
+            TooltipStyle -> "TextStyling"]& )], " ", 
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )]}]]}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+           "TextStyling"]& )], "[", 
+        TemplateBox[{"\"t\"", "\"Time\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+           "TextStyling"]& )], "]"}], "\[Rule]", 
+       RowBox[{
+        RowBox[{"(", 
+         TemplateBox[{
+           RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+          "Quantity"], ")"}], " ", 
+        RowBox[{"x", "[", "u", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric potential"}], 
+           TooltipStyle -> "TextStyling"]& )], "[", 
+        TemplateBox[{"\"t\"", "\"Time\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+           "TextStyling"]& )], "]"}], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"f", "[", "u", "]"}], " ", 
+         RowBox[{"(", 
+          TemplateBox[{
+            RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+           "Quantity"], ")"}]}], 
+        TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric capacitance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       RowBox[{"x", " ", 
+        RowBox[{"(", 
+         TemplateBox[{
+           RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+          "Quantity"], ")"}]}]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " electric potential"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       FractionBox[
+        RowBox[{"f", " ", 
+         RowBox[{"(", 
+          TemplateBox[{
+            RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+           "Quantity"], ")"}]}], 
+        TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric capacitance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"t\"", "\"Time\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       RowBox[{"u", " ", 
+        TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric capacitance"}], 
+           TooltipStyle -> "TextStyling"]& )], " ", 
+        TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric resistance"}], 
+           TooltipStyle -> "TextStyling"]& )]}]}]}], "}"}]}], ",", 
+   RowBox[{"\<\"DimensionalizationRules\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["x", "\[Prime]",
+         MultilineFunction->None], "[", "u", "]"}], "\[Rule]", 
+       RowBox[{
+        RowBox[{"(", 
+         TemplateBox[{
+           FractionBox["1", 
+            RowBox[{"K", "[", "1", "]"}]], 
+           RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+           "reciprocal coulombs", 
+           FractionBox["1", "\"Coulombs\""]},
+          "Quantity"], ")"}], " ", 
+        TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric capacitance"}], 
+           TooltipStyle -> "TextStyling"]& )], " ", 
+        TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric resistance"}], 
+           TooltipStyle -> "TextStyling"]& )], " ", 
+        RowBox[{
+         SuperscriptBox[
+          TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+             "TextStyling"]& )], "\[Prime]",
+          MultilineFunction->None], "[", 
+         TemplateBox[{"\"t\"", "\"Time\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+            "TextStyling"]& )], "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"x", "[", "u", "]"}], "\[Rule]", 
+       RowBox[{
+        RowBox[{"(", 
+         TemplateBox[{
+           FractionBox["1", 
+            RowBox[{"K", "[", "1", "]"}]], 
+           RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+           "reciprocal coulombs", 
+           FractionBox["1", "\"Coulombs\""]},
+          "Quantity"], ")"}], " ", 
+        RowBox[{
+         TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+            "TextStyling"]& )], "[", 
+         TemplateBox[{"\"t\"", "\"Time\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+            "TextStyling"]& )], "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"f", "[", "u", "]"}], "\[Rule]", 
+       RowBox[{
+        RowBox[{"(", 
+         TemplateBox[{
+           FractionBox["1", 
+            RowBox[{"K", "[", "1", "]"}]], 
+           RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+           "reciprocal coulombs", 
+           FractionBox["1", "\"Coulombs\""]},
+          "Quantity"], ")"}], " ", 
+        TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric capacitance"}], 
+           TooltipStyle -> "TextStyling"]& )], " ", 
+        RowBox[{
+         TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric potential"}], 
+            TooltipStyle -> "TextStyling"]& )], "[", 
+         TemplateBox[{"\"t\"", "\"Time\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+            "TextStyling"]& )], "]"}]}]}], ",", 
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{
+        RowBox[{"(", 
+         TemplateBox[{
+           FractionBox["1", 
+            RowBox[{"K", "[", "1", "]"}]], 
+           RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+           "reciprocal coulombs", 
+           FractionBox["1", "\"Coulombs\""]},
+          "Quantity"], ")"}], " ", 
+        TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+           "TextStyling"]& )]}]}], ",", 
+      RowBox[{"f", "\[Rule]", 
+       RowBox[{
+        RowBox[{"(", 
+         TemplateBox[{
+           FractionBox["1", 
+            RowBox[{"K", "[", "1", "]"}]], 
+           RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+           "reciprocal coulombs", 
+           FractionBox["1", "\"Coulombs\""]},
+          "Quantity"], ")"}], " ", 
+        TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric capacitance"}], 
+           TooltipStyle -> "TextStyling"]& )], " ", 
+        TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric potential"}], 
+           TooltipStyle -> "TextStyling"]& )]}]}], ",", 
+      RowBox[{"u", "\[Rule]", 
+       FractionBox[
+        TemplateBox[{"\"t\"", "\"Time\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+           "TextStyling"]& )], 
+        RowBox[{
+         TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric capacitance"}], 
+            TooltipStyle -> "TextStyling"]& )], " ", 
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )]}]]}]}], "}"}]}], ",", 
+   RowBox[{"\<\"NondimensionalizationMultipliers\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{
+       TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       TemplateBox[{
+         RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+        "Quantity"]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " electric potential"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       FractionBox[
+        TemplateBox[{
+          RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+         "Quantity"], 
+        TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric capacitance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"t\"", "\"Time\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       RowBox[{
+        TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric capacitance"}], 
+           TooltipStyle -> "TextStyling"]& )], " ", 
+        TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric resistance"}], 
+           TooltipStyle -> "TextStyling"]& )]}]}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"DimensionalizationMultipliers\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"x", "\[Rule]", 
+       TemplateBox[{
+         FractionBox["1", 
+          RowBox[{"K", "[", "1", "]"}]], 
+         RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+         "reciprocal coulombs", 
+         FractionBox["1", "\"Coulombs\""]},
+        "Quantity"]}], ",", 
+      RowBox[{"f", "\[Rule]", 
+       RowBox[{
+        RowBox[{"(", 
+         TemplateBox[{
+           FractionBox["1", 
+            RowBox[{"K", "[", "1", "]"}]], 
+           RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+           "reciprocal coulombs", 
+           FractionBox["1", "\"Coulombs\""]},
+          "Quantity"], ")"}], " ", 
+        TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric capacitance"}], 
+           TooltipStyle -> "TextStyling"]& )]}]}], ",", 
+      RowBox[{"u", "\[Rule]", 
+       FractionBox["1", 
+        RowBox[{
+         TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric capacitance"}], 
+            TooltipStyle -> "TextStyling"]& )], " ", 
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )]}]]}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.883346765675536*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"f29f5293-3ed0-45e1-80fc-81223c25bfe3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NondimensionalizationTransform", "[", 
+  RowBox[{"odeLRC", ",", 
+   RowBox[{"{", 
+    RowBox[{"q", ",", "v", ",", "\[Tau]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "f", ",", "u"}], "}"}], ",", 
+   "\"\<PropertyAssociation\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.883346754676424*^9, 3.8833467734803543`*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"3f1e30fb-2761-4cef-9de0-cae4d96624dd"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"ReducedForm\"\>", "\[Rule]", 
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       RowBox[{"x", "[", "u", "]"}], 
+       TemplateBox[{"1"},
+        "C"]], "+", 
+      RowBox[{
+       SuperscriptBox["x", "\[Prime]",
+        MultilineFunction->None], "[", "u", "]"}], "+", 
+      RowBox[{
+       SuperscriptBox["x", "\[Prime]\[Prime]",
+        MultilineFunction->None], "[", "u", "]"}]}], "\[Equal]", 
+     RowBox[{"f", "[", "u", "]"}]}]}], ",", 
+   RowBox[{"\<\"NondimensionalizationRules\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SuperscriptBox[
+         TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+            "TextStyling"]& )], "\[Prime]",
+         MultilineFunction->None], "[", 
+        TemplateBox[{"\"t\"", "\"Time\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+           "TextStyling"]& )], "]"}], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"(", 
+          TemplateBox[{
+            RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+           "Quantity"], ")"}], " ", 
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )], " ", 
+         RowBox[{
+          SuperscriptBox["x", "\[Prime]",
+           MultilineFunction->None], "[", "u", "]"}]}], 
+        TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " magnetic inductance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}], ",", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox[
+         TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+            "TextStyling"]& )], "\[Prime]\[Prime]",
+         MultilineFunction->None], "[", 
+        TemplateBox[{"\"t\"", "\"Time\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+           "TextStyling"]& )], "]"}], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"(", 
+          TemplateBox[{
+            RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+           "Quantity"], ")"}], " ", 
+         SuperscriptBox[
+          TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " electric resistance"}], 
+             TooltipStyle -> "TextStyling"]& )], "2"], " ", 
+         RowBox[{
+          SuperscriptBox["x", "\[Prime]\[Prime]",
+           MultilineFunction->None], "[", "u", "]"}]}], 
+        SuperscriptBox[
+         TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " magnetic inductance"}], 
+            TooltipStyle -> "TextStyling"]& )], "2"]]}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+           "TextStyling"]& )], "[", 
+        TemplateBox[{"\"t\"", "\"Time\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+           "TextStyling"]& )], "]"}], "\[Rule]", 
+       RowBox[{
+        RowBox[{"(", 
+         TemplateBox[{
+           RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+          "Quantity"], ")"}], " ", 
+        RowBox[{"x", "[", "u", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{
+        TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric potential"}], 
+           TooltipStyle -> "TextStyling"]& )], "[", 
+        TemplateBox[{"\"t\"", "\"Time\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+           "TextStyling"]& )], "]"}], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"f", "[", "u", "]"}], " ", 
+         RowBox[{"(", 
+          TemplateBox[{
+            RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+           "Quantity"], ")"}], " ", 
+         SuperscriptBox[
+          TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " electric resistance"}], 
+             TooltipStyle -> "TextStyling"]& )], "2"]}], 
+        TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " magnetic inductance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       RowBox[{"x", " ", 
+        RowBox[{"(", 
+         TemplateBox[{
+           RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+          "Quantity"], ")"}]}]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " electric potential"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       FractionBox[
+        RowBox[{"f", " ", 
+         RowBox[{"(", 
+          TemplateBox[{
+            RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+           "Quantity"], ")"}], " ", 
+         SuperscriptBox[
+          TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " electric resistance"}], 
+             TooltipStyle -> "TextStyling"]& )], "2"]}], 
+        TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " magnetic inductance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"t\"", "\"Time\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       FractionBox[
+        RowBox[{"u", " ", 
+         TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " magnetic inductance"}], 
+            TooltipStyle -> "TextStyling"]& )]}], 
+        TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric resistance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " electric capacitance"}], 
+          TooltipStyle -> "TextStyling"]& )], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         TemplateBox[{"1"},
+          "C"], " ", 
+         TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " magnetic inductance"}], 
+            TooltipStyle -> "TextStyling"]& )]}], 
+        SuperscriptBox[
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )], "2"]]}]}], "}"}]}], ",", 
+   RowBox[{"\<\"DimensionalizationRules\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["x", "\[Prime]",
+         MultilineFunction->None], "[", "u", "]"}], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"(", 
+          TemplateBox[{
+            FractionBox["1", 
+             RowBox[{"K", "[", "1", "]"}]], 
+            RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+            "reciprocal coulombs", 
+            FractionBox["1", "\"Coulombs\""]},
+           "Quantity"], ")"}], " ", 
+         TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " magnetic inductance"}], 
+            TooltipStyle -> "TextStyling"]& )], " ", 
+         RowBox[{
+          SuperscriptBox[
+           TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+            "QuantityVariable",
+            DisplayFunction->(TooltipBox[
+              
+              StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+               False], 
+              RowBox[{"Quantity variable:", " electric charge"}], 
+              TooltipStyle -> "TextStyling"]& )], "\[Prime]",
+           MultilineFunction->None], "[", 
+          TemplateBox[{"\"t\"", "\"Time\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+             "TextStyling"]& )], "]"}]}], 
+        TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric resistance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}], ",", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["x", "\[Prime]\[Prime]",
+         MultilineFunction->None], "[", "u", "]"}], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"(", 
+          TemplateBox[{
+            FractionBox["1", 
+             RowBox[{"K", "[", "1", "]"}]], 
+            RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+            "reciprocal coulombs", 
+            FractionBox["1", "\"Coulombs\""]},
+           "Quantity"], ")"}], " ", 
+         SuperscriptBox[
+          TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " magnetic inductance"}], 
+             TooltipStyle -> "TextStyling"]& )], "2"], " ", 
+         RowBox[{
+          SuperscriptBox[
+           TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+            "QuantityVariable",
+            DisplayFunction->(TooltipBox[
+              
+              StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+               False], 
+              RowBox[{"Quantity variable:", " electric charge"}], 
+              TooltipStyle -> "TextStyling"]& )], "\[Prime]\[Prime]",
+           MultilineFunction->None], "[", 
+          TemplateBox[{"\"t\"", "\"Time\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+             "TextStyling"]& )], "]"}]}], 
+        SuperscriptBox[
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )], "2"]]}], ",", 
+      RowBox[{
+       RowBox[{"x", "[", "u", "]"}], "\[Rule]", 
+       RowBox[{
+        RowBox[{"(", 
+         TemplateBox[{
+           FractionBox["1", 
+            RowBox[{"K", "[", "1", "]"}]], 
+           RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+           "reciprocal coulombs", 
+           FractionBox["1", "\"Coulombs\""]},
+          "Quantity"], ")"}], " ", 
+        RowBox[{
+         TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+            "TextStyling"]& )], "[", 
+         TemplateBox[{"\"t\"", "\"Time\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+            "TextStyling"]& )], "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"f", "[", "u", "]"}], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"(", 
+          TemplateBox[{
+            FractionBox["1", 
+             RowBox[{"K", "[", "1", "]"}]], 
+            RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+            "reciprocal coulombs", 
+            FractionBox["1", "\"Coulombs\""]},
+           "Quantity"], ")"}], " ", 
+         TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " magnetic inductance"}], 
+            TooltipStyle -> "TextStyling"]& )], " ", 
+         RowBox[{
+          TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " electric potential"}], 
+             TooltipStyle -> "TextStyling"]& )], "[", 
+          TemplateBox[{"\"t\"", "\"Time\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+             "TextStyling"]& )], "]"}]}], 
+        SuperscriptBox[
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )], "2"]]}], ",", 
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{
+        RowBox[{"(", 
+         TemplateBox[{
+           FractionBox["1", 
+            RowBox[{"K", "[", "1", "]"}]], 
+           RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+           "reciprocal coulombs", 
+           FractionBox["1", "\"Coulombs\""]},
+          "Quantity"], ")"}], " ", 
+        TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+           "TextStyling"]& )]}]}], ",", 
+      RowBox[{"f", "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"(", 
+          TemplateBox[{
+            FractionBox["1", 
+             RowBox[{"K", "[", "1", "]"}]], 
+            RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+            "reciprocal coulombs", 
+            FractionBox["1", "\"Coulombs\""]},
+           "Quantity"], ")"}], " ", 
+         TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " magnetic inductance"}], 
+            TooltipStyle -> "TextStyling"]& )], " ", 
+         TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric potential"}], 
+            TooltipStyle -> "TextStyling"]& )]}], 
+        SuperscriptBox[
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )], "2"]]}], ",", 
+      RowBox[{"u", "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )], " ", 
+         TemplateBox[{"\"t\"", "\"Time\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+            "TextStyling"]& )]}], 
+        TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " magnetic inductance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}], ",", 
+      RowBox[{
+       TemplateBox[{"1"},
+        "C"], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric capacitance"}], 
+            TooltipStyle -> "TextStyling"]& )], " ", 
+         SuperscriptBox[
+          TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " electric resistance"}], 
+             TooltipStyle -> "TextStyling"]& )], "2"]}], 
+        TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " magnetic inductance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}]}], "}"}]}], ",", 
+   RowBox[{"\<\"NondimensionalizationMultipliers\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{
+       TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       TemplateBox[{
+         RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+        "Quantity"]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"V\"", "\"ElectricPotential\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " electric potential"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"(", 
+          TemplateBox[{
+            RowBox[{"K", "[", "1", "]"}], "\"C\"", "coulombs", "\"Coulombs\""},
+           "Quantity"], ")"}], " ", 
+         SuperscriptBox[
+          TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " electric resistance"}], 
+             TooltipStyle -> "TextStyling"]& )], "2"]}], 
+        TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " magnetic inductance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"t\"", "\"Time\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+          "TextStyling"]& )], "\[Rule]", 
+       RowBox[{
+        SqrtBox[
+         TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " magnetic inductance"}], 
+            TooltipStyle -> "TextStyling"]& )]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SqrtBox[
+           TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+            "QuantityVariable",
+            DisplayFunction->(TooltipBox[
+              
+              StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+               False], 
+              RowBox[{"Quantity variable:", " magnetic inductance"}], 
+              TooltipStyle -> "TextStyling"]& )]], " ", 
+          SuperscriptBox[
+           TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+            "QuantityVariable",
+            DisplayFunction->(TooltipBox[
+              
+              StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+               False], 
+              RowBox[{"Quantity variable:", " electric resistance"}], 
+              TooltipStyle -> "TextStyling"]& )], 
+           RowBox[{"-", 
+            FractionBox["2", "2"]}]]}], ")"}]}]}], ",", 
+      RowBox[{
+       TemplateBox[{"\"C\"", "\"ElectricCapacitance\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " electric capacitance"}], 
+          TooltipStyle -> "TextStyling"]& )], "\[Rule]", 
+       FractionBox[
+        TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " magnetic inductance"}], 
+           TooltipStyle -> "TextStyling"]& )], 
+        SuperscriptBox[
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )], "2"]]}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"DimensionalizationMultipliers\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"x", "\[Rule]", 
+       TemplateBox[{
+         FractionBox["1", 
+          RowBox[{"K", "[", "1", "]"}]], 
+         RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+         "reciprocal coulombs", 
+         FractionBox["1", "\"Coulombs\""]},
+        "Quantity"]}], ",", 
+      RowBox[{"f", "\[Rule]", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"(", 
+          TemplateBox[{
+            FractionBox["1", 
+             RowBox[{"K", "[", "1", "]"}]], 
+            RowBox[{"\"/\"", "\[InvisibleSpace]", "\"C\""}], 
+            "reciprocal coulombs", 
+            FractionBox["1", "\"Coulombs\""]},
+           "Quantity"], ")"}], " ", 
+         TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " magnetic inductance"}], 
+            TooltipStyle -> "TextStyling"]& )]}], 
+        SuperscriptBox[
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )], "2"]]}], ",", 
+      RowBox[{"u", "\[Rule]", 
+       FractionBox[
+        SuperscriptBox[
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )], 
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"2", " ", 
+            RowBox[{"(", 
+             RowBox[{"-", "1"}], ")"}]}], "2"]}]], 
+        RowBox[{
+         SqrtBox[
+          TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " magnetic inductance"}], 
+             TooltipStyle -> "TextStyling"]& )]], " ", 
+         SqrtBox[
+          TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+           "QuantityVariable",
+           DisplayFunction->(TooltipBox[
+             
+             StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+              False], 
+             RowBox[{"Quantity variable:", " magnetic inductance"}], 
+             TooltipStyle -> "TextStyling"]& )]]}]]}], ",", 
+      RowBox[{
+       TemplateBox[{"1"},
+        "C"], "\[Rule]", 
+       FractionBox[
+        SuperscriptBox[
+         TemplateBox[{"\"R\"", "\"ElectricResistance\""},
+          "QuantityVariable",
+          DisplayFunction->(TooltipBox[
+            
+            StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+             False], 
+            RowBox[{"Quantity variable:", " electric resistance"}], 
+            TooltipStyle -> "TextStyling"]& )], "2"], 
+        TemplateBox[{"\"L\"", "\"MagneticInductance\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " magnetic inductance"}], 
+           TooltipStyle -> "TextStyling"]& )]]}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.883346774182005*^9},
+ CellLabel->"Out[26]=",ExpressionUUID->"77f80176-3859-46a5-a8f2-5b6be1d4edca"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Tau]", "=", 
+     RowBox[{"QuantityVariable", "[", 
+      RowBox[{"\"\<t\>\"", ",", "\"\<Time\>\""}], "]"}]}], ";"}], "\n"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"q", "=", 
+     RowBox[{"QuantityVariable", "[", 
+      RowBox[{"\"\<Q\>\"", ",", "\"\<ElectricCharge\>\""}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{"v", "=", 
+     RowBox[{"QuantityVariable", "[", 
+      RowBox[{"\"\<V\>\"", ",", "\"\<ElectricPotential\>\""}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{"r", "=", 
+     RowBox[{"QuantityVariable", "[", 
+      RowBox[{"\"\<R\>\"", ",", "\"\<ElectricResistance\>\""}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{"c", "=", 
+     RowBox[{"QuantityVariable", "[", 
+      RowBox[{"\"\<C\>\"", ",", "\"\<ElectricCapacitance\>\""}], "]"}]}], 
+    ";"}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"QuantityVariable", "[", 
+    RowBox[{"\"\<\[ScriptL]\>\"", ",", "\"\<Length\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "=", 
+   RowBox[{"QuantityVariable", "[", 
+    RowBox[{"\"\<g\>\"", ",", "\"\<Acceleration\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ngl", "=", 
+   RowBox[{"QuantityVariable", "[", 
+    RowBox[{"\"\<\[Theta]\>\"", ",", "\"\<Angle\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k", "=", 
+   RowBox[{"QuantityVariable", "[", 
+    RowBox[{"\"\<\[ScriptK]\>\"", ",", "\"\<SpringConstant\>\""}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.8833470260279417`*^9, 3.8833470997277775`*^9}, {
+  3.8833471794625673`*^9, 3.883347199901904*^9}, {3.883347271192255*^9, 
+  3.883347285932871*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"32428f59-364c-420c-886e-c15b23f95a54"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullForm", "[", 
+  RowBox[{"Hold", "[", 
+   RowBox[{"odeLRC", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"l", " ", 
+       RowBox[{
+        RowBox[{"q", "''"}], "[", "\[Tau]", "]"}]}], "+", 
+      RowBox[{"r", " ", 
+       RowBox[{
+        RowBox[{"q", "'"}], "[", "\[Tau]", "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"q", "[", "\[Tau]", "]"}], "/", "c"}]}], "==", 
+     RowBox[{"v", "[", "\[Tau]", "]"}]}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.883347122295813*^9, 3.883347125536044*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"0709897c-c237-4321-a13f-6afd617011ef"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"Hold", "[", 
+    RowBox[{"Set", "[", 
+     RowBox[{"odeLRC", ",", 
+      RowBox[{"Equal", "[", 
+       RowBox[{
+        RowBox[{"Plus", "[", 
+         RowBox[{
+          RowBox[{"Times", "[", 
+           RowBox[{"l", ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Derivative", "[", "2", "]"}], "[", "q", "]"}], "[", 
+             "\\[Tau]", "]"}]}], "]"}], ",", 
+          RowBox[{"Times", "[", 
+           RowBox[{"r", ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Derivative", "[", "1", "]"}], "[", "q", "]"}], "[", 
+             "\\[Tau]", "]"}]}], "]"}], ",", 
+          RowBox[{"Times", "[", 
+           RowBox[{
+            RowBox[{"q", "[", "\\[Tau]", "]"}], ",", 
+            RowBox[{"Power", "[", 
+             RowBox[{"c", ",", 
+              RowBox[{"-", "1"}]}], "]"}]}], "]"}]}], "]"}], ",", 
+        RowBox[{"v", "[", "\\[Tau]", "]"}]}], "]"}]}], "]"}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{3.883347125858472*^9},
+ CellLabel->
+  "Out[30]//FullForm=",ExpressionUUID->"7c56b835-7ad9-49bd-a131-9d51b42bd8d0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Derivative", "[", "1", "]"}], "[", "q", "]"}], "[", "\[Tau]", 
+  "]"}]], "Input",
+ CellLabel->"In[31]:=",ExpressionUUID->"d3f25b2b-86c1-4194-8c04-ecceab56fdef"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   TemplateBox[{"\"Q\"", "\"ElectricCharge\""},
+    "QuantityVariable",
+    DisplayFunction->(TooltipBox[
+      StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+      RowBox[{"Quantity variable:", " electric charge"}], TooltipStyle -> 
+      "TextStyling"]& )], "\[Prime]",
+   MultilineFunction->None], "[", 
+  TemplateBox[{"\"t\"", "\"Time\""},
+   "QuantityVariable",
+   DisplayFunction->(TooltipBox[
+     StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> False], 
+     RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+     "TextStyling"]& )], "]"}]], "Output",
+ CellChangeTimes->{3.883347152102584*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"948c9e0e-5013-4ad3-95a7-da48c389626f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqn", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"l", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Derivative", "[", "2", "]"}], "[", "ngl", "]"}], "[", 
+      "\[Tau]", "]"}]}], "+", 
+    RowBox[{"k", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Derivative", "[", "1", "]"}], "[", "ngl", "]"}], "[", 
+      "\[Tau]", "]"}]}], "+", 
+    RowBox[{"g", " ", 
+     RowBox[{"Sin", "[", "ngl", "]"}]}]}], "==", "0"}]}]], "Input",
+ CellChangeTimes->{{3.883347138411075*^9, 3.8833472295532956`*^9}, {
+  3.8833472923869534`*^9, 3.883347329607726*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"0d14b268-7d1c-4dbf-b045-2ae5d6011aa5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    TemplateBox[{"\"g\"", "\"Acceleration\""},
+     "QuantityVariable",
+     DisplayFunction->(TooltipBox[
+       StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+        False], 
+       RowBox[{"Quantity variable:", " acceleration"}], TooltipStyle -> 
+       "TextStyling"]& )], " ", 
+    RowBox[{"Sin", "[", 
+     TemplateBox[{"\"\[Theta]\"", "\"Angle\""},
+      "QuantityVariable",
+      DisplayFunction->(TooltipBox[
+        StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+         False], 
+        RowBox[{"Quantity variable:", " plane angle"}], TooltipStyle -> 
+        "TextStyling"]& )], "]"}]}], "+", 
+   RowBox[{
+    TemplateBox[{"\"\[ScriptK]\"", "\"SpringConstant\""},
+     "QuantityVariable",
+     DisplayFunction->(TooltipBox[
+       StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+        False], 
+       RowBox[{"Quantity variable:", " spring constant"}], TooltipStyle -> 
+       "TextStyling"]& )], " ", 
+    RowBox[{
+     SuperscriptBox[
+      TemplateBox[{"\"\[Theta]\"", "\"Angle\""},
+       "QuantityVariable",
+       DisplayFunction->(TooltipBox[
+         StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+          False], 
+         RowBox[{"Quantity variable:", " plane angle"}], TooltipStyle -> 
+         "TextStyling"]& )], "\[Prime]",
+      MultilineFunction->None], "[", 
+     TemplateBox[{"\"t\"", "\"Time\""},
+      "QuantityVariable",
+      DisplayFunction->(TooltipBox[
+        StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+         False], 
+        RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+        "TextStyling"]& )], "]"}]}], "+", 
+   RowBox[{
+    TemplateBox[{"\"\[ScriptL]\"", "\"Length\""},
+     "QuantityVariable",
+     DisplayFunction->(TooltipBox[
+       StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+        False], 
+       RowBox[{"Quantity variable:", " length"}], TooltipStyle -> 
+       "TextStyling"]& )], " ", 
+    RowBox[{
+     SuperscriptBox[
+      TemplateBox[{"\"\[Theta]\"", "\"Angle\""},
+       "QuantityVariable",
+       DisplayFunction->(TooltipBox[
+         StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+          False], 
+         RowBox[{"Quantity variable:", " plane angle"}], TooltipStyle -> 
+         "TextStyling"]& )], "\[Prime]\[Prime]",
+      MultilineFunction->None], "[", 
+     TemplateBox[{"\"t\"", "\"Time\""},
+      "QuantityVariable",
+      DisplayFunction->(TooltipBox[
+        StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+         False], 
+        RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+        "TextStyling"]& )], "]"}]}]}], "\[Equal]", "0"}]], "Output",
+ CellChangeTimes->{{3.883347210011035*^9, 3.883347218924657*^9}, {
+  3.8833473107890778`*^9, 3.883347330008054*^9}},
+ CellLabel->"Out[44]=",ExpressionUUID->"5ca3efed-2415-4473-9b32-98cdc06348e3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NondimensionalizationTransform", "[", 
+  RowBox[{"eqn", ",", 
+   RowBox[{"{", "ngl", "}"}], ",", 
+   RowBox[{"{", 
+    OverscriptBox["\[Theta]", "_"], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8833473321463647`*^9, 3.883347384340865*^9}},
+ CellLabel->"In[45]:=",ExpressionUUID->"9dc7ffbe-f047-4210-82df-0620e641711e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NondimensionalizationTransform", "unbal", 
+   "\"Equation is dimensionally unbalanced.\"", 2, 45, 5, 
+   21640044949855572256, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.883347384741143*^9},
+ CellLabel->
+  "During evaluation of \
+In[45]:=",ExpressionUUID->"3cc85451-c964-4db6-947a-dd11046f9b93"],
+
+Cell[BoxData[
+ RowBox[{"NondimensionalizationTransform", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      TemplateBox[{"\"g\"", "\"Acceleration\""},
+       "QuantityVariable",
+       DisplayFunction->(TooltipBox[
+         StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+          False], 
+         RowBox[{"Quantity variable:", " acceleration"}], TooltipStyle -> 
+         "TextStyling"]& )], " ", 
+      RowBox[{"Sin", "[", 
+       TemplateBox[{"\"\[Theta]\"", "\"Angle\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " plane angle"}], TooltipStyle -> 
+          "TextStyling"]& )], "]"}]}], "+", 
+     RowBox[{
+      TemplateBox[{"\"\[ScriptK]\"", "\"SpringConstant\""},
+       "QuantityVariable",
+       DisplayFunction->(TooltipBox[
+         StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+          False], 
+         RowBox[{"Quantity variable:", " spring constant"}], TooltipStyle -> 
+         "TextStyling"]& )], " ", 
+      RowBox[{
+       SuperscriptBox[
+        TemplateBox[{"\"\[Theta]\"", "\"Angle\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " plane angle"}], TooltipStyle -> 
+           "TextStyling"]& )], "\[Prime]",
+        MultilineFunction->None], "[", 
+       TemplateBox[{"\"t\"", "\"Time\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+          "TextStyling"]& )], "]"}]}], "+", 
+     RowBox[{
+      TemplateBox[{"\"\[ScriptL]\"", "\"Length\""},
+       "QuantityVariable",
+       DisplayFunction->(TooltipBox[
+         StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+          False], 
+         RowBox[{"Quantity variable:", " length"}], TooltipStyle -> 
+         "TextStyling"]& )], " ", 
+      RowBox[{
+       SuperscriptBox[
+        TemplateBox[{"\"\[Theta]\"", "\"Angle\""},
+         "QuantityVariable",
+         DisplayFunction->(TooltipBox[
+           
+           StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+            False], 
+           RowBox[{"Quantity variable:", " plane angle"}], TooltipStyle -> 
+           "TextStyling"]& )], "\[Prime]\[Prime]",
+        MultilineFunction->None], "[", 
+       TemplateBox[{"\"t\"", "\"Time\""},
+        "QuantityVariable",
+        DisplayFunction->(TooltipBox[
+          
+          StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+           False], 
+          RowBox[{"Quantity variable:", " time"}], TooltipStyle -> 
+          "TextStyling"]& )], "]"}]}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{"{", 
+    TemplateBox[{"\"\[Theta]\"", "\"Angle\""},
+     "QuantityVariable",
+     DisplayFunction->(TooltipBox[
+       StyleBox[#, FontColor -> GrayLevel[0.4], ShowStringCharacters -> 
+        False], 
+       RowBox[{"Quantity variable:", " plane angle"}], TooltipStyle -> 
+       "TextStyling"]& )], "}"}], ",", 
+   RowBox[{"{", 
+    OverscriptBox["\[Theta]", "_"], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.8833473848413877`*^9},
+ CellLabel->"Out[45]=",ExpressionUUID->"4a7f56e5-3c04-420b-9fa7-a0c3df3cec67"]
+}, Open  ]]
+}, Open  ]]
 },
-WindowSize->{1152., 615.6},
+WindowSize->{576., 615.6},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (November 18, 2022)",
@@ -37,6 +2017,70 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 159, 3, 45, "Subsubsection",ExpressionUUID->"9107857b-4b11-4531-a183-e9e0e1d1decc"],
+Cell[CellGroupData[{
+Cell[764, 29, 225, 4, 28, "Input",ExpressionUUID->"e7bcbd24-f9b2-43a7-9093-6a636868ebae"],
+Cell[992, 35, 153, 2, 32, "Output",ExpressionUUID->"e186955f-9f10-4f7a-8e1c-265183408b31"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1182, 42, 248, 5, 28, "Input",ExpressionUUID->"70a11f2e-a216-4350-8572-30c023eace4f"],
+Cell[1433, 49, 176, 2, 32, "Output",ExpressionUUID->"22135de8-6acc-441b-acea-cc6594c62de1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1646, 56, 276, 6, 28, "Input",ExpressionUUID->"7b5a7346-d403-4f40-a599-57c59fd7a4ed"],
+Cell[1925, 64, 155, 2, 32, "Output",ExpressionUUID->"a37df388-e1d8-43fb-9b5d-0d8ed6d78b7a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2129, 72, 162, 3, 45, "Subsubsection",ExpressionUUID->"5f612e13-406c-42ce-911c-55fc8cbdbaa2"],
+Cell[CellGroupData[{
+Cell[2316, 79, 281, 5, 28, "Input",ExpressionUUID->"87fa00e3-2e2f-4b35-a487-6b0317a75f30"],
+Cell[2600, 86, 967, 15, 166, "Output",ExpressionUUID->"ba01641c-80c9-4519-aa68-459c0f57ca6c"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3616, 107, 174, 3, 37, "Subsubsection",ExpressionUUID->"ab780c49-8f3f-48fe-afc7-12ea85dc003e"],
+Cell[3793, 112, 1087, 31, 124, "Input",ExpressionUUID->"6e105c26-99b0-4aa5-9db7-e13f8d5e3ad7"],
+Cell[CellGroupData[{
+Cell[4905, 147, 425, 11, 28, "Input",ExpressionUUID->"b9677bd7-1813-4e69-8955-9355218d756c"],
+Cell[5333, 160, 2750, 65, 48, "Output",ExpressionUUID->"248b5216-4f79-4be0-a4a0-96ce793c65ca"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8120, 230, 523, 14, 28, "Input",ExpressionUUID->"7af54439-587b-42c2-89dd-a2229a046b66"],
+Cell[8646, 246, 3789, 90, 48, "Output",ExpressionUUID->"e8694627-bd41-4dd4-88fb-a55cc305f210"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12472, 341, 388, 8, 28, "Input",ExpressionUUID->"ee5913af-35a5-4e90-80c7-ddcdf3bc736c"],
+Cell[12863, 351, 349, 9, 32, "Output",ExpressionUUID->"f1a99e5f-ce18-47d8-8b5b-19745083f0d5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13249, 365, 430, 9, 48, "Input",ExpressionUUID->"f9315a9a-f74e-4478-ae32-3711ec6c94a3"],
+Cell[13682, 376, 19330, 479, 478, "Output",ExpressionUUID->"f29f5293-3ed0-45e1-80fc-81223c25bfe3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33049, 860, 431, 9, 48, "Input",ExpressionUUID->"3f1e30fb-2761-4cef-9de0-cae4d96624dd"],
+Cell[33483, 871, 31725, 781, 577, "Output",ExpressionUUID->"77f80176-3859-46a5-a8f2-5b6be1d4edca"]
+}, Open  ]],
+Cell[65223, 1655, 1754, 48, 181, "Input",ExpressionUUID->"32428f59-364c-420c-886e-c15b23f95a54"],
+Cell[CellGroupData[{
+Cell[67002, 1707, 608, 16, 28, "Input",ExpressionUUID->"0709897c-c237-4321-a13f-6afd617011ef"],
+Cell[67613, 1725, 1217, 35, 85, "Output",ExpressionUUID->"7c56b835-7ad9-49bd-a131-9d51b42bd8d0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68867, 1765, 207, 5, 28, "Input",ExpressionUUID->"d3f25b2b-86c1-4194-8c04-ecceab56fdef"],
+Cell[69077, 1772, 774, 17, 32, "Output",ExpressionUUID->"948c9e0e-5013-4ad3-95a7-da48c389626f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69888, 1794, 655, 18, 48, "Input",ExpressionUUID->"0d14b268-7d1c-4dbf-b045-2ae5d6011aa5"],
+Cell[70546, 1814, 2957, 71, 32, "Output",ExpressionUUID->"5ca3efed-2415-4473-9b32-98cdc06348e3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73540, 1890, 347, 7, 31, "Input",ExpressionUUID->"9dc7ffbe-f047-4210-82df-0620e641711e"],
+Cell[73890, 1899, 356, 9, 28, "Message",ExpressionUUID->"3cc85451-c964-4db6-947a-dd11046f9b93"],
+Cell[74249, 1910, 3538, 87, 55, "Output",ExpressionUUID->"4a7f56e5-3c04-420b-9fa7-a0c3df3cec67"]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
